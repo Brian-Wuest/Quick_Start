@@ -38,6 +38,7 @@
 			foreach (Item item in this.startingItems)
 			{
 				this.Monitor.Log("adding item to starting inventory: " + item.DisplayName, LogLevel.Info);
+
 				Game1.player.addItemToInventory(item);
 			}
 
@@ -85,6 +86,11 @@
 			{
 				this.startingItems.Add(new StardewValley.Objects.Chest(true));
 			}
+
+			if (this.options.IncludeClay)
+			{
+				this.startingItems.Add(new StardewValley.Object(330, this.options.ClayCount));
+			}
 		}
 
 		private void ValidateOptions()
@@ -119,6 +125,12 @@
 			{
 				updateConfigFile = true;
 				this.options.MixedSeedsCount = ModOptions.DefaultMixedSeeds;
+			}
+
+			if (this.options.ClayCount < 1 || this.options.ClayCount > 400)
+			{
+				updateConfigFile = true;
+				this.options.ClayCount = ModOptions.DefaultClay;
 			}
 
 			if (updateConfigFile)

@@ -12,6 +12,7 @@
 		public static readonly int DefaultWood = 100;
 		public static readonly int DefaultStone = 100;
 		public static readonly int DefaultMixedSeeds = 25;
+		public static readonly int DefaultClay = 10;
 
 		#endregion
 
@@ -30,6 +31,8 @@
 			this.StoneCount = ModOptions.DefaultStone;
 			this.MixedSeedsCount = ModOptions.DefaultMixedSeeds;
 			this.IncludeBonusChest = true;
+			this.IncludeClay = true;
+			this.ClayCount = ModOptions.DefaultClay;
 		}
 
 		#endregion
@@ -128,6 +131,23 @@
 		/// Gets or sets a value indicating whether bonus money is added to the player.
 		/// </summary>
 		public bool IncludeBonusMoney
+		{
+			get; set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether clay is included.
+		/// </summary>
+		public bool IncludeClay
+		{
+
+			get; set;
+		}
+
+		/// <summary>
+		/// Gets or sets the amount of clay included in the inventory.
+		/// </summary>
+		public int ClayCount
 		{
 			get; set;
 		}

@@ -10,5 +10,7 @@
 	"IncludeMixedSeeds": true,
 	"MixedSeedsCount": 25,
 	"IncludeBonusChest": true,
-	"IncludeBonusMoney": true
+	"IncludeBonusMoney": true,
+	"IncludeClay": true,
+	"ClayCount": 10
 }
