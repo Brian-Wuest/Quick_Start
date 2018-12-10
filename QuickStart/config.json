@@ -20,5 +20,6 @@
 	"SetLevel1CombatLevel": true,
 	"SetLevel1ForagingLevel": true,
 	"SetLevel1HarvestingLevel": true,
-	"SetLevel1Mininglevel":  true
+	"SetLevel1Mininglevel": true,
+	"GiveCopperWateringCan":  true
 }

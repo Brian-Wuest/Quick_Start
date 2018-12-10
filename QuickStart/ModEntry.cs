@@ -126,6 +126,18 @@
 				this.Monitor.Log("Adding 250 gold to starting money", LogLevel.Info);
 				Game1.player.Money = Game1.player.Money + 250;
 			}
+
+			if (this.options.GiveCopperWateringCan)
+			{
+				var wateringCan = Game1.player.getToolFromName("Watering Can") as StardewValley.Tools.WateringCan;
+
+				if (wateringCan != null)
+				{
+					wateringCan.UpgradeLevel = 1;
+					wateringCan.waterCanMax = 55;
+					wateringCan.WaterLeft = 55;
+				}
+			}
 		}
 
 		private void SetCharacterLevels()

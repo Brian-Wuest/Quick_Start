@@ -224,6 +224,15 @@
 			set;
 		}
 
+		/// <summary>
+		/// Determjines if the copper watering can is the default one.
+		/// </summary>
+		public bool GiveCopperWateringCan
+		{
+			get;
+			set;
+		}
+
 		#endregion
 	}
 }
