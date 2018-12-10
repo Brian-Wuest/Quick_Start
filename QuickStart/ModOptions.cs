@@ -152,6 +152,78 @@
 			get; set;
 		}
 
+		/// <summary>
+		/// Gets or sets a value indicating whether the maximum energy is updated.
+		/// </summary>
+		public bool SetMaxEnergy
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the maximum health is updated.
+		/// </summary>
+		public bool SetMaxHealth
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the first backpack upgrade is provided at startup.
+		/// </summary>
+		public bool IncludeFirstBackpackUpgrade
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the fishing level is initially set to 1.
+		/// </summary>
+		public bool SetLevel1FishingLevel
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the combat level is initially set to 1.
+		/// </summary>
+		public bool SetLevel1CombatLevel
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the foraging level is initially set to 1.1
+		/// </summary>
+		public bool SetLevel1ForagingLevel
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the harvesting level is initially set to 1.
+		/// </summary>
+		public bool SetLevel1HarvestingLevel
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the mining level is initially set to 1.
+		/// </summary>
+		public bool SetLevel1Mininglevel
+		{
+			get;
+			set;
+		}
+
 		#endregion
 	}
 }
