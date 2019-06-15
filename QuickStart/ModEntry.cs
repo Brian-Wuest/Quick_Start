@@ -2,9 +2,7 @@
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Text;
 	using StardewModdingAPI;
-	using StardewModdingAPI.Events;
 	using StardewValley;
 
 	/// <summary>
@@ -310,7 +308,7 @@
 
 				if (strArray[0].Equals("l") && Convert.ToInt32(strArray[1]) <= level && !Game1.player.craftingRecipes.ContainsKey(key))
 				{
-					if (key.ToLower().EndsWith("floor") 
+					if (key.ToLower().EndsWith("floor")
 						|| key.ToLower().EndsWith("path"))
 					{
 						// Don't add the paths or floors since the player should have to pay for it.
