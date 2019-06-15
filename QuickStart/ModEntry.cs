@@ -3,6 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 	using StardewModdingAPI;
+	using StardewModdingAPI.Events;
 	using StardewValley;
 
 	/// <summary>
@@ -10,7 +11,6 @@
 	/// </summary>
 	public class ModEntry : Mod
 	{
-		public IModHelper modHelper;
 		public ModOptions options;
 		public List<Item> startingItems;
 		public const int FarmSkill = 0;
@@ -26,13 +26,17 @@
 		public override void Entry(IModHelper helper)
 		{
 			this.Monitor.Log("Loading Quick Start", LogLevel.Info);
-			this.modHelper = helper;
-			helper.Events.GameLoop.SaveCreating += this.SaveEvents_BeforeCreate;
-			this.options = this.modHelper.ReadConfig<ModOptions>();
+			helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
+			helper.Events.GameLoop.SaveCreating += this.OnSaveCreating;
+			this.options = helper.ReadConfig<ModOptions>();
+		}
+
+		private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
+		{
 			this.SetupStartingItems();
 		}
 
-		private void SaveEvents_BeforeCreate(object sender, EventArgs e)
+		private void OnSaveCreating(object sender, EventArgs e)
 		{
 			foreach (Item item in this.startingItems)
 			{
@@ -217,7 +221,7 @@
 			if (updateConfigFile)
 			{
 				// The configuration file has invalid option data. Re-write it so we don't do this next time.
-				this.modHelper.WriteConfig(this.options);
+				this.Helper.WriteConfig(this.options);
 			}
 		}
 
